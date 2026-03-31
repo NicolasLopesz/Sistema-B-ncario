@@ -8,5 +8,9 @@ class SaldoInsuficienteError(Exception):
         
         super().__init__(self.mensagem)
         
+class ContaInexistenteError(Exception):
+    def __init__(self, numero_conta, mensagem='A conta espesificada não foi enontrada!'):
+        self.numero_conta = numero_conta
+        self.mensagem = f'{mensagem} Numero da conta: {numero_conta}'
         
-        
+        super().__init__(self.mensagem)

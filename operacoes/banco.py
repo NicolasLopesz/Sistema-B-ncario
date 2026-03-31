@@ -8,9 +8,9 @@ class Banco:
         
         self.nome = nome
         
-        self.clientes = {}
+        self._clientes = {}
         
-        self.contas = {}
+        self._contas = {}
         
     def adcionar_clientes(self, nome:str, cpf:str) -> Cliente:
         
@@ -43,4 +43,9 @@ class Banco:
         
         return nova_conta
     
-    
+    def buscar_conta(self, numero_conta: int) -> Conta:
+        conta = self._contas.get(numero_conta)
+        
+        if not conta:
+            raise ContaInexistenteError(numero_conta)
+        return conta

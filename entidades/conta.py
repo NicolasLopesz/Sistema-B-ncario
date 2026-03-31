@@ -44,7 +44,7 @@ class Conta(ABC):
     
     def extrato(self):
         
-        print(f'\n--- Extrato da Conta n{self._numero} ---')
+        print(f'\n--- Extrato da Conta numero: {self._numero} ---')
         print(f'Cliente: {self._cliente}')
         print(f'Saldo atua: R${self._saldo}')
         print(f'Histórico de Transações:')
